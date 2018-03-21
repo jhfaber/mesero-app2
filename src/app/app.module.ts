@@ -1,3 +1,5 @@
+import { PlatoService } from './_service/plato.service';
+import { ComboBoxDirective } from './_directive/combobox.directive';
 import { PlatoEdicionComponent } from './plato/plato-edicion/plato-edicion.component';
 import { PlatoDetalleComponent } from './plato/plato-detalle/plato-detalle.component';
 import { PlatoInicioComponent } from './plato/plato-inicio/plato-inicio.component';
@@ -17,6 +19,8 @@ import { ComponentesComponent } from './componentes/componentes.component';
 import { PlatoListaComponent } from './plato/plato-lista/plato-lista.component';
 
 
+import {DataTableModule} from "angular2-datatable";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +33,16 @@ import { PlatoListaComponent } from './plato/plato-lista/plato-lista.component';
     PlatoInicioComponent,
     PlatoDetalleComponent,
     PlatoEdicionComponent,
-    PlatoListaComponent
+    PlatoListaComponent,
+    ComboBoxDirective
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DataTableModule
   ],
-  providers: [],
+  providers: [ PlatoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
